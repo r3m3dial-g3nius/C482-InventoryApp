@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="basemodel.MainScreenController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="1080.0" maxWidth="1920.0" prefHeight="700.0" prefWidth="1000.0">
+         <children>
+            <StackPane prefHeight="50.0" prefWidth="1000.0">
+               <children>
+                  <Label prefHeight="61.0" prefWidth="289.0" text="Inventory Control System">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </StackPane>
+            <HBox prefHeight="700.0" prefWidth="1200.0">
+               <children>
+                  <VBox prefHeight="700.0" prefWidth="500.0">
+                     <children>
+                        <StackPane prefHeight="40.0" prefWidth="480.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="46.0" text="Parts">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </StackPane>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="501.0" minWidth="10.0" prefWidth="370.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="55.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                            <Button maxHeight="30.0" maxWidth="80.0" mnemonicParsing="false" onAction="#onActionLookupPart" prefHeight="30.0" prefWidth="80.0" text="Search" GridPane.columnIndex="1" />
+                              <TextField fx:id="partSearchText" maxHeight="30.0" minWidth="0.0" prefHeight="30.0" prefWidth="300.0" promptText="Enter Part ID or Part Name..." />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                        <TableView fx:id="partTableView" prefHeight="450.0" prefWidth="500.0">
+                          <columns>
+                            <TableColumn fx:id="partIdCol" prefWidth="110.0" text="Part ID" />
+                            <TableColumn fx:id="partNameCol" prefWidth="200.0" text="Part Name" />
+                              <TableColumn fx:id="partPriceCol" prefWidth="75.0" text="Price" />
+                              <TableColumn fx:id="partInStockColumn" prefWidth="95.0" text="In Stock" />
+                          </columns>
+                        </TableView>
+                        <GridPane layoutX="10.0" layoutY="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="200.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="addPartButton" mnemonicParsing="false" onAction="#onActionAddPart" prefHeight="30.0" prefWidth="227.0" text="Add Part">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Button>
+                              <Button fx:id="modifyPartButton" mnemonicParsing="false" onAction="#onActionModifyPart" prefHeight="30.0" prefWidth="227.0" text="Modify Part" GridPane.columnIndex="1" />
+                              <Button fx:id="deletePartButton" layoutX="136.0" layoutY="17.0" mnemonicParsing="false" onAction="#onActionDeletePart" prefHeight="30.0" prefWidth="227.0" text="Delete Part" GridPane.columnIndex="2" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="500.0">
+                     <children>
+                        <StackPane prefHeight="40.0" prefWidth="480.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="79.0" text="Products">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </StackPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="370.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button maxHeight="30.0" maxWidth="80.0" mnemonicParsing="false" onAction="#onActionLookupProduct" prefHeight="30.0" prefWidth="80.0" text="Search" GridPane.columnIndex="1" />
+                              <TextField fx:id="productSearchText" maxHeight="30.0" minWidth="0.0" prefHeight="30.0" prefWidth="300.0" promptText="Enter Product ID or Product Name..." />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                        <TableView fx:id="productTableView" prefHeight="450.0" prefWidth="500.0">
+                           <columns>
+                              <TableColumn fx:id="productIdCol" prefWidth="110.0" text="Product ID" />
+                              <TableColumn fx:id="productNameCol" prefWidth="200.0" text="Product Name" />
+                              <TableColumn fx:id="productPriceCol" prefWidth="75.0" text="Price" />
+                              <TableColumn fx:id="productInStockCol" prefWidth="95.0" text="In Stock" />
+                           </columns>
+                        </TableView>
+                        <GridPane layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="500.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="200.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#onActionAddProduct" prefHeight="30.0" prefWidth="227.0" text="Add Product">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Button>
+                              <Button fx:id="modifyProductButton" mnemonicParsing="false" onAction="#onActionModifyProduct" prefHeight="30.0" prefWidth="227.0" text="Modify Product" GridPane.columnIndex="1" />
+                              <Button fx:id="deleteProductButton" mnemonicParsing="false" onAction="#onActionDeleteProduct" prefHeight="30.0" prefWidth="227.0" text="Delete Product" GridPane.columnIndex="2" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ButtonBar layoutY="641.0" prefHeight="60.0" prefWidth="1000.0">
+        <buttons>
+          <Button fx:id="exitProgramButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionExitButton" prefHeight="96.0" prefWidth="980.0" text="Exit" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </Button>
+        </buttons>
+         <padding>
+            <Insets bottom="10.0" right="10.0" top="10.0" />
+         </padding>
+      </ButtonBar>
+   </children>
+</AnchorPane>
