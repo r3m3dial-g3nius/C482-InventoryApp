@@ -7,6 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+
+//   ---------------------------  THIS IS THE FINAL VERSION OF THE PROJECT  ---------------------------------
+
+
 /**
  * This class creates an application that allows accurate logging of inventory levels.
  *
