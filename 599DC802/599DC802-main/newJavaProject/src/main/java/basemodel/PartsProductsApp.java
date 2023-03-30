@@ -126,6 +126,6 @@ public class PartsProductsApp extends Application {
 
 //----------------------   LAUNCH   ---------------------------------------------------------------------
 
-        launch(args);
+    launch(args);
     }
 }

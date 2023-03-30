@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="basemodel" target="17" />
-      <module name="stevenBennettC482Project" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
